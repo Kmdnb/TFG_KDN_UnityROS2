@@ -64,6 +64,11 @@ source ~/ros2_ws/install/setup.bash
 ```
 
 * Establish a connection with Unity through ROS-TCP-Connector.
+
+```bash
+ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:= [YOUR_IP]
+```
+
 * Run the nodes in different terminals:
 
 ```bash
