@@ -51,7 +51,15 @@ This package includes the URDF Importer for Unity.  
 
 ### 4. Unity Preparation
 
-Once the project is open and the ROS-TCP-Connector package is configured, follow these steps:
+Once the project is open and the ROS-TCP-Connector package is configured, follow these steps to increase the terrain texture resolution:
+
+  * Go to Assets  >3D Meshes > Textures, and click on the TerrainTexture image.
+  * Then, change the setting accordingly.
+  * (Recommended values):
+      - Aniso Level = 16
+      - Max Size = 16384
+      - Compression = High Quality.
+
 
 ### 5. Project Execution
 
