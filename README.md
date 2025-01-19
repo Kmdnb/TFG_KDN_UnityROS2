@@ -88,8 +88,9 @@ ros2 run fixposition_pkg imu_subscriber #IMU response
 ros2 run fixposition_pkg odometry_subscriber #Odometry response
 ```
 
-* Starting Unity
-  Run the project scene in Unity
+**Starting Unity:**
+
+* Run the project scene in Unity
 
 * Verifying the connection:
 
