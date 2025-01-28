@@ -51,26 +51,29 @@ public class LiDARPublisher : MonoBehaviour
 
         // Simula los datos de distancia
         lidarMessage.ranges = new float[numSamples];
-        lidarMessage.intensities = new float[numSamples]; // A馻dimos intensidades para simular reflexiones, aunque sea 0
+        lidarMessage.intensities = new float[numSamples]; // A帽adimos intensidades para simular reflexiones, aunque sea 0
 
         for (int i = 0; i < numSamples; i++)
         {
             float angle = lidarMessage.angle_min + i * lidarMessage.angle_increment;
 
-            // Calcula la direcci髇 en base al 醤gulo
+            // Calcula la direcci贸n en base al 谩ngulo
             Vector3 rayDirection = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle));
             RaycastHit hit;
 
-            // Raycast en direcci髇 calculada
+            // Dibuja el rayo en la escena de Unity
+            //Debug.DrawRay(transform.position, transform.TransformDirection(rayDirection) * maxRange, Color.yellow);
+
+            // Raycast en direcci贸n calculada
             if (Physics.Raycast(transform.position, transform.TransformDirection(rayDirection), out hit, maxRange))
             {
-                lidarMessage.ranges[i] = hit.distance/2;
-                lidarMessage.intensities[i] = 1.0f; // Valor de intensidad fijo para simular detecci髇
+                lidarMessage.ranges[i] = hit.distance;
+                lidarMessage.intensities[i] = 1.0f; // Valor de intensidad fijo para simular detecci贸n
             }
             else
             {
                 lidarMessage.ranges[i] = maxRange;
-                lidarMessage.intensities[i] = 0.0f; // Sin detecci髇
+                lidarMessage.intensities[i] = 0.0f; // Sin detecci贸n
             }
         }
 
